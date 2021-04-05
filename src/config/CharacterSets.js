@@ -7,7 +7,8 @@ import KatakanaCombos from '../data/KatakanaCombos'
 import NumbersKanji from '../data/NumbersKanji'
 import GreetingsRomaji from '../data/GreetingsRomaji'
 import GreetingsHiragana from '../data/GreetingsHiragana'
-import FruitRomaji from '../data/FruitRomaji'
+import FruitsRomaji from '../data/FruitsRomaji'
+import FruitsKana from '../data/FruitsKana'
 
 const characterSets = {
   'Hiragana' : Hiragana,
@@ -19,7 +20,8 @@ const characterSets = {
   'NumbersKanji' : NumbersKanji,
   'GreetingsRomaji' : GreetingsRomaji,
   'GreetingsHiragana' : GreetingsHiragana,
-  'FruitRomaji' : FruitRomaji,
+  'FruitsRomaji' : FruitsRomaji,
+  'FruitsKana' : FruitsKana,
 }
 
 export default characterSets
