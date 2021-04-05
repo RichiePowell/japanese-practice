@@ -4,7 +4,7 @@ const GreetingsHiragana = {
   icon: 'ひ',
   firstAnswerAsCorrection: true,
   characters: {
-    'こんにちは': [ 'Good day' ],
+    'こんにちは': [ 'Good afternoon' ],
     'おはよう': [ 'Good morning (casual)', 'Good morning' ],
     'おはようございます': [ 'Good morning (polite)', 'Good morning' ],
     'こんばんは': [ 'Good evening' ],
@@ -14,6 +14,7 @@ const GreetingsHiragana = {
     'さよなら': [ 'Good bye' ],
     'じゃね': [ 'See you', 'Good bye' ],
     'もしもし': [ 'Hello' ],
+    'おげんきですか': [ 'How are you?' ],
   }
 }
 

@@ -4,7 +4,7 @@ const GreetingsRomaji = {
   icon: 'Hi',
   firstAnswerAsCorrection: true,
   characters: {
-    'Kon nichi wa': [ 'Good day' ],
+    'Kon nichi wa': [ 'Good afternoon' ],
     'Ohayo': [ 'Good morning (casual)', 'Good morning' ],
     'Ohayo gozaimasu': [ 'Good morning (polite)', 'Good morning' ],
     'Kon ban wa': [ 'Good evening' ],
@@ -14,6 +14,7 @@ const GreetingsRomaji = {
     'Sayonara': [ 'Good bye', 'Goodbye' ],
     'Ja ne': [ 'See you', 'Good bye', 'Goodbye' ],
     'Moshi moshi': [ 'Hello' ],
+    'O-genki desu ka?': [ 'How are you?' ],
   }
 }
 
