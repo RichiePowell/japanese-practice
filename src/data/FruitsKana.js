@@ -1,6 +1,6 @@
 const FruitsKana = {
   name: 'Fruits in Kana',
-  description: 'Common fruits in　kana.',
+  description: 'Common fruits in kana.',
   icon: '果',
   characters: {
     'いちご': [ 'Strawberry' ],
