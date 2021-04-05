@@ -2,9 +2,9 @@ import React from 'react'
 import InputKeyboard from './InputKeyboard'
 import InputChoices from './InputChoices'
 
-const Input = ({ keyboardMode }) =>
+const Input = ({ input, keyboardMode }) =>
   <div className="answers">
-    { keyboardMode ?
+    { keyboardMode && input !== 'choices' ?
       <InputKeyboard />
     :
       <InputChoices />

@@ -29,7 +29,6 @@ const InputKeyboard = () => {
               type="text"
               className="answer"
               placeholder="Enter answer..."
-              maxLength="3"
               autoFocus={true}
             />
             <input

@@ -5,12 +5,13 @@ const InputChoices = () =>
   <Consumer>
     { ({ answerOptions, actions }) => (
       <div className="answer-options">
-        {answerOptions && answerOptions.map( (answer, index) => {
-          answer = Array.isArray(answer) ? answer[0] : answer;
+        {answerOptions && answerOptions.map( (answers, index) => {
+          let answer = answers[0];
           return (
           <button
             key={ answer + index }
             type="button"
+            className={ "answer-options__option" + (answer.length > 3 ? ' answer-options__option--word' : '') }
             name="answer"
             value={ answer }
             onClick={ () => actions.checkAnswer(answer) }

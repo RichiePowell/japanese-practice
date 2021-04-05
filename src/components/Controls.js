@@ -7,11 +7,13 @@ import EndGame from './controls/EndGame'
 
 const Controls = () =>
   <Consumer>
-    { ({ actions, sound }) => (
+    { ({ currentKanaSet, actions, sound }) => (
       <div className="controls">
         <Audio sound={sound} actions={actions} />
         <DarkMode actions={actions} />
-        <InputToggle actions={actions} />
+        { typeof currentKanaSet.input === 'undefined' ?
+          <InputToggle actions={actions} />
+        : '' }
         <div className="float-right">
           <EndGame actions={actions} />
         </div>

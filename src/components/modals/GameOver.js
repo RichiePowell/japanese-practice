@@ -20,7 +20,7 @@ const GameOverModalContent = (data) => {
   let wrongAnswersOutput = [];
 
   wrongAnswers.forEach( (character) => {
-    let correctAnswers = Array.isArray(data.characters[character]) ? data.characters[character].join(' or ') : data.characters[character];
+    let correctAnswers = data.characters[character][0];
     wrongAnswersOutput.push(`
     <div class="report-wrong-answers__item">
       <div class="report-wrong-answers__item__character">${character}</div>

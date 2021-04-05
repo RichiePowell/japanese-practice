@@ -4,7 +4,7 @@ const Header = () =>
   <header className="header">
     <h1>
       Japanese
-      <span>Kana Practice</span>
+      <span>Practice</span>
     </h1>
   </header>
 

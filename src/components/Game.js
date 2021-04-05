@@ -14,30 +14,34 @@ import Controls from './Controls'
 import { CountdownCircleTimer } from 'react-countdown-circle-timer'
 
 export const Game = () => {
-  const context = useContext(GameData);
-  let history = useHistory();
+  const context = useContext(GameData)
+  let history = useHistory()
 
   // Use hooks to start the game on mount
   useEffect(() => {
     context.actions.startGame()
     // ... and end it on unmount
-    return () => context.actions.endGame();
+    return () => context.actions.endGame()
     
     // eslint-disable-next-line
   }, [])
 
   const getAnswerCorrection = () => {
-    let matchingCharacters = [];
+    let matchingCharacters = []
+    let currentKanaSetCharacters = context.currentKanaSet.characters;
 
-    Object.keys(context.kana).forEach(kana => {
-      Object.keys(context.kana[kana].characters).forEach(char => {
-        if(context.kana[kana].characters[char] === context.currentUserAnswer) {
-          matchingCharacters.push( char );
-        }
+    if(typeof currentKanaSetCharacters !== 'undefined') {
+      Object.keys(currentKanaSetCharacters).forEach(character => {
+        currentKanaSetCharacters[character].forEach(answer => {
+          console.log(answer)
+          if(answer.toLowerCase() === context.currentUserAnswer) {
+            matchingCharacters.push( character )
+          }
+        })
       })
-    })
-    
-    return matchingCharacters;
+    }
+
+    return matchingCharacters.length > 0 ? `<div class="uc-first"><strong>${context.currentUserAnswer}</strong> is <strong>${matchingCharacters.join('</strong> or <strong>')}</strong>.</div>` : '';
   }
 
   return (
@@ -84,7 +88,10 @@ export const Game = () => {
         </div>
         : ''
       }
-      <Input keyboardMode={ context.keyboardMode } />
+      <Input
+        input={ context.currentKanaSet.input }
+        keyboardMode={ context.keyboardMode }
+      />
       <Controls />
       <SweetAlert
         show={ context.wrongAnswerDialogActive }
@@ -95,7 +102,7 @@ export const Game = () => {
             context.actions.loadNewCharacter()
           }
         }
-        html={ context.currentUserAnswer !== 'Omae wa mou shindeiru' ? context.currentUserAnswer + ' is ' + getAnswerCorrection().join(', ') : '' }
+        html={ getAnswerCorrection() }
       />
     </>
   )

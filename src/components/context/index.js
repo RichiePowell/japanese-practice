@@ -12,6 +12,9 @@ import Katakana from './../../data/Katakana'
 import KatakanaDakuten from './../../data/KatakanaDakuten'
 import KatakanaCombos from './../../data/KatakanaCombos'
 import NumbersKanji from './../../data/NumbersKanji'
+import GreetingsRomaji from './../../data/GreetingsRomaji'
+import GreetingsHiragana from './../../data/GreetingsHiragana'
+import FruitRomaji from './../../data/FruitRomaji'
 
 export const GameData = React.createContext()
 
@@ -41,7 +44,11 @@ export class Provider extends Component {
       'KatakanaDakuten' : KatakanaDakuten,
       'KatakanaCombos' : KatakanaCombos,
       'NumbersKanji' : NumbersKanji,
+      'GreetingsRomaji' : GreetingsRomaji,
+      'GreetingsHiragana' : GreetingsHiragana,
+      'FruitRomaji' : FruitRomaji,
     },
+    currentKanaSet: {},
     kanaSelected: ['Hiragana', 'HiraganaDakuten', 'Katakana', 'KatakanaDakuten'],
     showWrongAnswerDialog: true,
     wrongAnswerDialogActive: false,
@@ -79,7 +86,7 @@ export class Provider extends Component {
   checkAnswer = (answer) => {
     const currentAnswer = this.state.currentAnswer;
     const userAnswer = answer.toLowerCase().trim();
-
+    
     // If the answer is blank, do nothing
     if(userAnswer === '') return false;
 
@@ -90,10 +97,7 @@ export class Provider extends Component {
     this.stopAnswerTimer()
     
     // If answer is wrong
-    if(
-      (Array.isArray(currentAnswer) && !currentAnswer.includes(userAnswer))
-      || (!Array.isArray(currentAnswer) && userAnswer !== currentAnswer)
-    ) {
+    if(currentAnswer.findIndex(item => userAnswer === item.toLowerCase()) === -1) {
       this.playSound('error');
       this.setState(prev => ({
         wrongAnswerDialogActive: this.state.showWrongAnswerDialog ? true : false,
@@ -231,8 +235,10 @@ export class Provider extends Component {
     const characterSet = shuffledCharacterSets.shift();
 
     // Assign the characters from the chosen set
-    const characters = this.state.kana[characterSet].characters;
+    const characterSetData = this.state.kana[characterSet];
+    const characters = characterSetData.characters;
     const shuffledCharacters = shuffle(Object.keys(characters)); // Shuffle the kana characters
+    const shuffledCharactersUnique = [...new Set(shuffledCharacters)];
     
     // If the currentCharacter isn't empty (e.g. it's the first answer) then
     // delete it from the new set of characters that's being loaded so it
@@ -242,11 +248,11 @@ export class Provider extends Component {
 
     const character = shuffledCharacters.shift(); // Grab the first one
     const answer = characters[character]; // Grab the answer
-    const answerPrintable = Array.isArray(answer) ? answer.join(' or ') : answer; // Make answer printable, join with "or" if it's an array (multiple answers)
+    const answerPrintable = characterSetData.firstAnswerAsCorrection ? answer[0] : answer.join(' or '); // Make answer printable, join multiple answers with "or"
 
     // Get answer options; one right answer and some wrong answers while preventing duplicates from similar answers
     const answerOptions = [answer]
-    shuffledCharacters.slice(0, 10).forEach( char => {
+    shuffledCharactersUnique.slice(0, 10).forEach( char => {
       if(answerOptions.length < 5 && answer !== characters[char]) {
         answerOptions.push(characters[char]);
       }
@@ -257,8 +263,9 @@ export class Provider extends Component {
       currentCharacter: character,
       currentAnswer: answer,
       currentAnswerPrintable: answerPrintable,
+      currentKanaSet: characterSetData,
       answerOptions: shuffle(answerOptions),
-      answerTimerKey: character
+      answerTimerKey: character,
     })
 
     // Start the answer timer
@@ -268,7 +275,6 @@ export class Provider extends Component {
   }
 
   componentDidMount() {
-    console.log(NumbersKanji)
     // Check if darkMode was set previously
     if(window.localStorage.getItem('darkMode')) {
       this.setState({
@@ -295,6 +301,7 @@ export class Provider extends Component {
         currentAnswerPrintable: this.state.currentAnswerPrintable,
         correctAnswersTotal: this.state.correctAnswersTotal,
         currentUserAnswer: this.state.currentUserAnswer,
+        currentKanaSet: this.state.currentKanaSet,
         wrongAnswers: this.state.wrongAnswers,
         wrongAnswersTotal: this.state.wrongAnswersTotal,
         lastAnswerWas: this.state.lastAnswerWas,

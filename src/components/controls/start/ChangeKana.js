@@ -17,7 +17,7 @@ const ChangeKana = () =>
             <label htmlFor={ kana[kanaSet].name } className="options__box__character__label kana">
               <div className={ 'options__box__character__icon' + (kana[kanaSet].icon.length > 1 ? ' options__box__character__icon--combo' : '') }>{ kana[kanaSet].icon }</div>
               <div className="options__box__character__details">
-                <h2>{ kana[kanaSet].name }</h2>
+                <h2>{ kana[kanaSet].name } ({ Object.keys(kana[kanaSet].characters).length })</h2>
                 { kana[kanaSet].description && <p>{kana[kanaSet].description}</p> }
                 <FontAwesomeIcon icon="check" className="options__box__check" />
               </div>

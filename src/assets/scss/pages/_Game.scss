@@ -6,15 +6,15 @@
     position: absolute;
     font-size: 18px;
     text-align: center;
-    transition: .2s all ease;
+    transition: 0.2s all ease;
 
     &__correct span {
       color: green;
     }
-  
+
     &__wrong {
       right: 30px;
-  
+
       span {
         color: $mainColor;
       }
@@ -50,14 +50,21 @@
   background: $mainColor;
   color: $white;
   border-radius: 9999px;
-  height: 250px;
-  line-height: 250px;
-  width: 250px;
+  height: 150px;
+  width: 150px;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   margin: auto;
   vertical-align: middle;
   margin-bottom: 15px;
   user-select: none;
-  text-align: center;
+
+  &--word {
+    font-size: 2rem;
+  }
 }
 
 .input {
@@ -75,7 +82,7 @@
     border-radius: 999px;
     margin-bottom: 15px;
   }
-  
+
   .submit {
     background: darken($inputBackground, 30);
     position: absolute;
@@ -98,15 +105,17 @@
 
 .answer-options {
   text-align: center;
+  padding: 10px 0 15px 0;
+  margin-left: -20px;
+  margin-right: -20px;
 
-  button {
+  &__option {
     padding: 13px 0;
     text-align: center;
     width: 48px;
     background: $inputBackground;
     display: inline-block;
-    margin-right: 10px;
-    margin-bottom: 20px;
+    margin: 5px;
     border: 1px $inputBackground solid;
     border-radius: 5px;
     font-size: 16px;
@@ -122,6 +131,12 @@
       color: $white;
       transform: scale(0.9);
     }
+
+    &--word {
+      width: auto;
+      padding: 6px;
+      font-size: 0.85rem;
+    }
   }
 }
 
@@ -130,9 +145,9 @@
     display: inline-block;
     margin-right: 10px;
     color: #333;
- 
+
     &:last-child {
       margin-right: 0;
     }
   }
- }
+}

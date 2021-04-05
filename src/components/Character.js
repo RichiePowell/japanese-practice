@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Character = ({ currentCharacter }) =>
-  <div className="character">
+  <div className={ 'character' + (currentCharacter.length > 2 ? ' character--word' : '') }>
     { currentCharacter }
   </div>
 
