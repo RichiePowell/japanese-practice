@@ -5,16 +5,7 @@ import { shuffle } from 'lodash'
 import { isMobile, isTablet } from 'react-device-detect'
 
 /* Character data */
-import Hiragana from './../../data/Hiragana'
-import HiraganaDakuten from './../../data/HiraganaDakuten'
-import HiraganaCombos from './../../data/HiraganaCombos'
-import Katakana from './../../data/Katakana'
-import KatakanaDakuten from './../../data/KatakanaDakuten'
-import KatakanaCombos from './../../data/KatakanaCombos'
-import NumbersKanji from './../../data/NumbersKanji'
-import GreetingsRomaji from './../../data/GreetingsRomaji'
-import GreetingsHiragana from './../../data/GreetingsHiragana'
-import FruitRomaji from './../../data/FruitRomaji'
+import characterSets from '../../config/CharacterSets'
 
 export const GameData = React.createContext()
 
@@ -36,18 +27,7 @@ export class Provider extends Component {
     lastAnswerWas: '',
     keyboardMode: isMobile || isTablet ? false : true,
     sound: true,
-    kana: {
-      'Hiragana' : Hiragana,
-      'HiraganaDakuten' : HiraganaDakuten,
-      'HiraganaCombos' : HiraganaCombos,
-      'Katakana' : Katakana,
-      'KatakanaDakuten' : KatakanaDakuten,
-      'KatakanaCombos' : KatakanaCombos,
-      'NumbersKanji' : NumbersKanji,
-      'GreetingsRomaji' : GreetingsRomaji,
-      'GreetingsHiragana' : GreetingsHiragana,
-      'FruitRomaji' : FruitRomaji,
-    },
+    kana: characterSets,
     currentKanaSet: {},
     kanaSelected: ['Hiragana', 'HiraganaDakuten', 'Katakana', 'KatakanaDakuten'],
     showWrongAnswerDialog: true,
