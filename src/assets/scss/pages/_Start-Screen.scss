@@ -189,11 +189,13 @@
 .checkbox {
   display: block;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 
   label {
     display: block;
     cursor: pointer;
     overflow: hidden;
+    outline: none;
   }
 
   &:hover {
