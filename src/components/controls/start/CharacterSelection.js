@@ -39,13 +39,13 @@ const CharacterSelection = ({ kana, kanaSelected, actions }) => {
           <label
             className="checkbox checkbox--right"
             htmlFor="toggleAll">
+            Toggle all
             <div className="checkbox__box">
               <FontAwesomeIcon
                 icon="check"
                 className="checkbox__box__check"
               />
             </div>
-            Toggle all
           </label>
         </div>
         <div className="characters-header__count">{ kanaSelected.length } selected ({ CountCharacters() } cards)</div>
