@@ -15,7 +15,7 @@ const FruitsKana = {
     'ライム': [ 'Lime' ],
     'トマト': [ 'Tomato' ],
     'パイナップル': [ 'Pineapple' ],
-    'ブルベリ': [ 'Blueberry' ],
+    'ブルーベリー': [ 'Blueberry' ],
     'メロン': [ 'Melon' ],
     'なし': [ 'Pear' ],
     'キウイ': [ 'Kiwi' ],
