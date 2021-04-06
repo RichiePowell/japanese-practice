@@ -12,7 +12,7 @@ const GreetingsHiragana = {
     'おやすみ': [ 'Good night (casual)', 'Good night' ],
     'おやすみなさい': [ 'Good night (polite)', 'Good night' ],
     'さよなら': [ 'Good bye' ],
-    'じゃね': [ 'See you', 'Good bye' ],
+    'じゃあね': [ 'See you', 'Good bye' ],
     'もしもし': [ 'Hello' ],
     'おげんきですか': [ 'How are you?' ],
   }
