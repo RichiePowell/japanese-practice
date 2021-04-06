@@ -4,18 +4,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 const ToggleShowCorrectAnswer = ({ showWrongAnswerDialog, actions }) =>
   <>
     <input type="checkbox"
-      className="input-row__checkbox__input"
+      className="checkbox__box__input"
       id="showCorrectAnswer"
       checked={ showWrongAnswerDialog }
       onChange={ (e) => { actions.toggleWrongAnswerDialog(e.target.checked) }} />
     <label
-      className="input-row input-label"
+      className="checkbox input-label input-row"
       htmlFor="showCorrectAnswer"
     >
-      <div className="input-row__checkbox">
+      <div className="checkbox__box">
         <FontAwesomeIcon
           icon="check"
-          className="input-row__checkbox__check"
+          className="checkbox__box__check"
         />
       </div>
       Show correct answer after mistake

@@ -33,7 +33,6 @@ export const Game = () => {
     if(typeof currentKanaSetCharacters !== 'undefined') {
       Object.keys(currentKanaSetCharacters).forEach(character => {
         currentKanaSetCharacters[character].forEach(answer => {
-          console.log(answer)
           if(answer.toLowerCase() === context.currentUserAnswer) {
             matchingCharacters.push( character )
           }

@@ -174,12 +174,14 @@ body {
     .input-row {
       background: #222;
       border-color: $darkModeInputBorderColor;
+    }
 
-      &:hover .input-row__checkbox {
+    .checkbox {
+      &:hover .checkbox__box {
         border-color: $darkModeInputBorderColorHover;
       }
 
-      &__checkbox {
+      &__box {
         border-color: $darkModeInputBorderColor;
 
         &__check {

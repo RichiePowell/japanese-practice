@@ -173,12 +173,13 @@ export class Provider extends Component {
   }
 
   // Add or remove the passed kana set name to the kana array in the state
-  toggleKana = (kana) => {
-    let newKanaSelection = this.state.kanaSelected;
-    if(!newKanaSelection.includes(kana)) {
-      newKanaSelection.push(kana);
-    } else if(newKanaSelection.length > 1) {
-      newKanaSelection.splice(newKanaSelection.indexOf(kana), 1);
+  toggleKana = (kana, overrideSelected = null) => {
+    let newKanaSelection = this.state.kanaSelected
+    
+    if((!newKanaSelection.includes(kana) && overrideSelected === null) || (!newKanaSelection.includes(kana) && overrideSelected === 1)) {
+      newKanaSelection.push(kana)
+    } else if((newKanaSelection.includes(kana) && overrideSelected === null) || overrideSelected === 0) {
+      newKanaSelection.splice(newKanaSelection.indexOf(kana), 1)
     }
     
     this.setState({ kanaSelected: newKanaSelection }, this.loadKana)

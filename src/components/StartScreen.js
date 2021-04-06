@@ -3,7 +3,7 @@ import { Consumer } from './context'
 import SweetAlert from 'sweetalert2-react'
 import GameOverModalContent from './modals/GameOver'
 import Header from './Header'
-import ChangeKana from './controls/start/ChangeKana'
+import CharacterSelection from './controls/start/CharacterSelection'
 import Options from './controls/start/Options'
 import Audio from './controls/Audio'
 import DarkMode from './controls/DarkMode'
@@ -14,8 +14,7 @@ const StartScreen = () =>
     { context => (
       <div className="start-screen">
         <Header />
-        <div className="characters-header">Choose what to practice (scrollable)</div>
-        <ChangeKana
+        <CharacterSelection
           kana={context.kana}
           kanaSelected={context.kanaSelected}
           actions={context.actions} />
@@ -28,7 +27,7 @@ const StartScreen = () =>
           <Audio
             sound={context.sound}
             actions={context.actions} />
-          <StartButton actions={context.actions} />
+          <StartButton kanaSelected={context.kanaSelected} />
           <DarkMode actions={context.actions} />
         </div>
         <SweetAlert
