@@ -11,7 +11,7 @@ const InputChoices = () =>
           <button
             key={ answer + index }
             type="button"
-            className={ "answer-options__option" + (answer.length > 3 ? ' answer-options__option--word' : '') }
+            className={ "answer-options__option" + (answer.length > 2 ? ' answer-options__option--word' : '') }
             name="answer"
             value={ answer }
             onClick={ () => actions.checkAnswer(answer) }
