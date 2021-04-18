@@ -1,7 +1,7 @@
 const KatakanaExtras = {
   name: 'Katakana Extras',
   description: 'Less commonly-used katakana characters.',
-  icon: 'キファョ',
+  icon: 'ファ',
   group: 2,
   characters: {
     ウィ: [ 'wi'],
