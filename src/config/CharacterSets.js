@@ -4,6 +4,7 @@ import HiraganaCombos from '../data/HiraganaCombos'
 import Katakana from '../data/Katakana'
 import KatakanaDakuten from '../data/KatakanaDakuten'
 import KatakanaCombos from '../data/KatakanaCombos'
+import KatakanaExtras from '../data/KatakanaExtras'
 import NumbersKanji from '../data/NumbersKanji'
 import GreetingsRomaji from '../data/GreetingsRomaji'
 import GreetingsHiragana from '../data/GreetingsHiragana'
@@ -18,6 +19,7 @@ const characterSets = {
   'Katakana' : Katakana,
   'KatakanaDakuten' : KatakanaDakuten,
   'KatakanaCombos' : KatakanaCombos,
+  'KatakanaExtras' : KatakanaExtras,
   'NumbersKanji' : NumbersKanji,
   'GreetingsRomaji' : GreetingsRomaji,
   'GreetingsHiragana' : GreetingsHiragana,
