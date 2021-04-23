@@ -11,6 +11,7 @@ import GreetingsHiragana from '../data/GreetingsHiragana'
 import FruitsRomaji from '../data/FruitsRomaji'
 import FruitsKana from '../data/FruitsKana'
 import ColoursRomaji from '../data/ColoursRomaji'
+import ColoursKana from '../data/ColoursKana'
 
 const characterSets = {
   'Hiragana' : Hiragana,
@@ -26,6 +27,7 @@ const characterSets = {
   'FruitsRomaji' : FruitsRomaji,
   'FruitsKana' : FruitsKana,
   'ColoursRomaji' : ColoursRomaji,
+  'ColoursKana' : ColoursKana,
 }
 
 export default characterSets
