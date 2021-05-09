@@ -1,7 +1,7 @@
 const BasicAnimalsRomaji = {
   name: 'Basic Animals in Romaji',
   description: 'Basic animal words in romaji.',
-  icon: '色',
+  icon: '動物',
   group: 3,
   characters: {
     'Inu': [ 'Dog' ],
