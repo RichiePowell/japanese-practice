@@ -10,11 +10,11 @@ import GreetingsRomaji from '../data/GreetingsRomaji'
 import GreetingsHiragana from '../data/GreetingsHiragana'
 import FruitsRomaji from '../data/FruitsRomaji'
 import FruitsKana from '../data/FruitsKana'
+import VegetablesRomaji from '../data/VegetablesRomaji'
 import ColoursRomaji from '../data/ColoursRomaji'
 import ColoursKana from '../data/ColoursKana'
 import BasicAnimalsRomaji from '../data/BasicAnimalsRomaji'
 import BasicAnimalsKana from '../data/BasicAnimalsKana'
-import VegetablesRomaji from '../data/VegetablesRomaji'
 
 const characterSets = {
   'Hiragana' : Hiragana,
@@ -29,11 +29,11 @@ const characterSets = {
   'GreetingsHiragana' : GreetingsHiragana,
   'FruitsRomaji' : FruitsRomaji,
   'FruitsKana' : FruitsKana,
+  'VegetablesRomaji' : VegetablesRomaji,
   'ColoursRomaji' : ColoursRomaji,
   'ColoursKana' : ColoursKana,
   'BasicAnimalsRomaji' : BasicAnimalsRomaji,
   'BasicAnimalsKana' : BasicAnimalsKana,
-  'VegetablesRomaji' : VegetablesRomaji,
 }
 
 export default characterSets
