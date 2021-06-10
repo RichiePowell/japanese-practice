@@ -11,6 +11,7 @@ import GreetingsHiragana from '../data/GreetingsHiragana'
 import FruitsRomaji from '../data/FruitsRomaji'
 import FruitsKana from '../data/FruitsKana'
 import VegetablesRomaji from '../data/VegetablesRomaji'
+import VegetablesKana from '../data/VegetablesKana'
 import ColoursRomaji from '../data/ColoursRomaji'
 import ColoursKana from '../data/ColoursKana'
 import BasicAnimalsRomaji from '../data/BasicAnimalsRomaji'
@@ -30,6 +31,7 @@ const characterSets = {
   'FruitsRomaji' : FruitsRomaji,
   'FruitsKana' : FruitsKana,
   'VegetablesRomaji' : VegetablesRomaji,
+  'VegetablesKana' : VegetablesKana,
   'ColoursRomaji' : ColoursRomaji,
   'ColoursKana' : ColoursKana,
   'BasicAnimalsRomaji' : BasicAnimalsRomaji,
