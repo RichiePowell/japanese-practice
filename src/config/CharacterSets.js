@@ -12,6 +12,8 @@ import FruitsRomaji from '../data/FruitsRomaji'
 import FruitsKana from '../data/FruitsKana'
 import VegetablesRomaji from '../data/VegetablesRomaji'
 import VegetablesKana from '../data/VegetablesKana'
+import DrinksRomaji from '../data/DrinksRomaji'
+import DrinksKana from '../data/DrinksKana'
 import ColoursRomaji from '../data/ColoursRomaji'
 import ColoursKana from '../data/ColoursKana'
 import BasicAnimalsRomaji from '../data/BasicAnimalsRomaji'
@@ -32,6 +34,8 @@ const characterSets = {
   'FruitsKana' : FruitsKana,
   'VegetablesRomaji' : VegetablesRomaji,
   'VegetablesKana' : VegetablesKana,
+  'DrinksRomaji' : DrinksRomaji,
+  'DrinksKana' : DrinksKana,
   'ColoursRomaji' : ColoursRomaji,
   'ColoursKana' : ColoursKana,
   'BasicAnimalsRomaji' : BasicAnimalsRomaji,
