@@ -136,8 +136,10 @@
       color: $white;
       transform: scale(0.9);
     }
+  }
 
-    &--word {
+  &--contains-word {
+    .answer-options__option {
       width: auto;
       padding: 6px;
       font-size: 0.85rem;
