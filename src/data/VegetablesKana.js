@@ -1,4 +1,4 @@
-const VegetablesKana {
+const VegetablesKana = {
   name: 'Vegetables in Kana',
   description: 'Common vegetables in kana.',
   icon: '野菜',
