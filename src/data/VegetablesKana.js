@@ -14,7 +14,7 @@ const VegetablesKana = {
     'ほうれんそう': [ 'Spinach' ],
     'たまねぎ': [ 'Onion' ],
     'だいず	': [ 'Soya bean' ],
-    '南瓜': [ 'Pumpkin' ],
+    'かぼちゃ': [ 'Pumpkin' ],
     'キノコ': [ 'Mushroom' ],
     'セロリ': [ 'Celery' ],
   }
