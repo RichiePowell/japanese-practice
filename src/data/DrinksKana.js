@@ -15,7 +15,7 @@ const DrinksKana = {
     'ソーダ': [ 'Soda' ],
     'ぎゅうにゅう': [ 'Milk' ],
     'コーラ': [ 'Cola' ],
-    'ラムネ': [ 'Lemon soda', 'Lemonade' ],
+    'とうにゅう': [ 'Soya milk' ],
     'ココア': [ 'Hot Chocolate', 'Cocoa' ],
   }
 }
