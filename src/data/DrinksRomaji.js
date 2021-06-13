@@ -14,6 +14,7 @@ const DrinksRomaji = {
     'Osake': [ 'Alcohol', 'Sake' ],
     'Sōda': [ 'Soda' ],
     'Kõra': [ 'Cola' ],
+    'Gyūnyū': [ 'Milk' ],
     'Tounyū': [ 'Soya milk' ],
     'Kokoa': [ 'Hot Chocolate', 'Cocoa' ],
   }
