@@ -8,6 +8,8 @@ import KatakanaExtras from '../data/KatakanaExtras'
 import NumbersKanji from '../data/NumbersKanji'
 import GreetingsRomaji from '../data/GreetingsRomaji'
 import GreetingsHiragana from '../data/GreetingsHiragana'
+import CommonConversationRomaji from '../data/CommonConversationRomaji'
+import CommonConversationHiragana from '../data/CommonConversationHiragana'
 import FruitsRomaji from '../data/FruitsRomaji'
 import FruitsKana from '../data/FruitsKana'
 import VegetablesRomaji from '../data/VegetablesRomaji'
@@ -30,6 +32,8 @@ const characterSets = {
   'NumbersKanji' : NumbersKanji,
   'GreetingsRomaji' : GreetingsRomaji,
   'GreetingsHiragana' : GreetingsHiragana,
+  'CommonConversationRomaji' : CommonConversationRomaji,
+  'CommonConversationHiragana' : CommonConversationHiragana,
   'FruitsRomaji' : FruitsRomaji,
   'FruitsKana' : FruitsKana,
   'VegetablesRomaji' : VegetablesRomaji,

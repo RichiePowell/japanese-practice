@@ -15,6 +15,8 @@ const GreetingsHiragana = {
     'じゃあね': [ 'See you', 'Good bye' ],
     'もしもし': [ 'Hello' ],
     'おげんきですか': [ 'How are you?' ],
+    'おかえり': [ 'Welcome back' ],
+    'ひさしぶり': [ 'Long time no see' ],
   }
 }
 

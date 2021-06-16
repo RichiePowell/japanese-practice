@@ -15,6 +15,8 @@ const GreetingsRomaji = {
     'Ja ne': [ 'See you', 'Good bye', 'Goodbye' ],
     'Moshi moshi': [ 'Hello' ],
     'O-genki desu ka?': [ 'How are you?' ],
+    'Okaeri': [ 'Welcome back' ],
+    'Hisashiburi': [ 'Long time no see' ],
   }
 }
 
