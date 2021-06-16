@@ -7,7 +7,7 @@ const CommonConversationRomaji = {
     'Arigatou': [ 'Thank you' ],
     'Arigatou gozaimasu': [ 'Thank you very much' ],
     'Dōitashimashite': [ 'You\'re welcome' ],
-    'Daijoubu': [ 'All right' ],
+    'Daijoubu': [ 'All right', 'It\'s okay', 'It is okay', 'It\'s fine' ],
     'Sou desu ne': [ 'I agree' ],
     'Wakarimashita': [ 'I understand' ],
     'Sumimasen': [ 'Excuse me' ],
