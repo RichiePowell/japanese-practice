@@ -1,5 +1,5 @@
 const CommonConversationHiragana = {
-  name: 'Common Conversation Words in Hiragana',
+  name: 'Common Conversation in Hiragana',
   description: 'Common words heard in conversation in hiragana.',
   icon: '会話',
   firstAnswerAsCorrection: true,

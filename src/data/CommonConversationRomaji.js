@@ -1,5 +1,5 @@
 const CommonConversationRomaji = {
-  name: 'Common Conversation Words in Romaji',
+  name: 'Common Conversation in Romaji',
   description: 'Common words heard in conversation in romaji.',
   icon: '会話',
   firstAnswerAsCorrection: true,
