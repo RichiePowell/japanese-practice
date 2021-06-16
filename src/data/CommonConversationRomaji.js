@@ -14,7 +14,7 @@ const CommonConversationRomaji = {
     'Kudasai': [ 'Please' ],
     'Hai': [ 'Yes' ],
     'Iie': [ 'No' ],
-    'Gomenasai': [ 'Sorry' ],
+    'Gomen nasai': [ 'Sorry' ],
     'Nani': [ 'What' ],
     'Sugoi': [ 'Amazing' ],
     'Hontoni': [ 'Really', 'Really?' ],
