@@ -6,7 +6,7 @@ const DaysOfTheWeekRomaji = {
   characters: {
     'Nichiyoubi': [ 'Sunday' ],
     'Getsuyoubi': [ 'Monday' ],
-    'Gayoubi': [ 'Tuesday' ],
+    'Kayoubi': [ 'Tuesday' ],
     'Suiyoubi': [ 'Wednesday' ],
     'Mokuyoubi': [ 'Thursday' ],
     'Kinyoubi': [ 'Friday' ],
