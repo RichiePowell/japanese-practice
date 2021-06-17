@@ -10,6 +10,8 @@ import GreetingsRomaji from '../data/GreetingsRomaji'
 import GreetingsHiragana from '../data/GreetingsHiragana'
 import CommonConversationRomaji from '../data/CommonConversationRomaji'
 import CommonConversationHiragana from '../data/CommonConversationHiragana'
+import DaysOfTheWeekRomaji from '../data/DaysOfTheWeekRomaji'
+import DaysOfTheWeekHiragana from '../data/DaysOfTheWeekHiragana'
 import FruitsRomaji from '../data/FruitsRomaji'
 import FruitsKana from '../data/FruitsKana'
 import VegetablesRomaji from '../data/VegetablesRomaji'
@@ -34,6 +36,8 @@ const characterSets = {
   'GreetingsHiragana' : GreetingsHiragana,
   'CommonConversationRomaji' : CommonConversationRomaji,
   'CommonConversationHiragana' : CommonConversationHiragana,
+  'DaysOfTheWeekRomaji' : DaysOfTheWeekRomaji,
+  'DaysOfTheWeekHiragana' : DaysOfTheWeekHiragana,
   'FruitsRomaji' : FruitsRomaji,
   'FruitsKana' : FruitsKana,
   'VegetablesRomaji' : VegetablesRomaji,
