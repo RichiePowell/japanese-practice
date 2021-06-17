@@ -11,7 +11,7 @@ const BasicAnimalsRomaji = {
     'Uma': [ 'Horse' ],
     'Usagi': [ 'Rabbit' ],
     'Hitsuji': [ 'Sheep' ],
-    'Soru': [ 'Monkey' ],
+    'Saru': [ 'Monkey' ],
     'Kame': [ 'Turtle' ],
     'Kitsune': [ 'Fox' ],
     'Shika': [ 'Deer' ],
