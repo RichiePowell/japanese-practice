@@ -19,7 +19,7 @@ const FruitsKana = {
     'メロン': [ 'Melon' ],
     'なし': [ 'Pear' ],
     'キウイ': [ 'Kiwi' ],
-    'マンゴウ': [ 'Mango' ],
+    'マンゴー': [ 'Mango' ],
     'アボカド': [ 'Avocado' ],
   }
 }
