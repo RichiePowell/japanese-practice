@@ -4,12 +4,12 @@ const RelationshipsHiragana = {
   icon: '♥',
   firstAnswerAsCorrection: true,
   characters: {
-    'はのじょ': [ 'Girlfriend' ],
+    'かのじょ': [ 'Girlfriend' ],
     'かれし': [ 'Boyfriend' ],
-    'おと': [ 'Husband' ],
-    'すま': [ 'Wife' ],
+    'おっと': [ 'Husband' ],
+    'つま': [ 'Wife' ],
     'あいしてる': [ 'I love you' ],
-    'こにゃく': [ 'Engagement', 'Engage' ],
+    'こんやく': [ 'Engagement', 'Engage' ],
     'けっこん': [ 'Marriage' ],
   }
 }

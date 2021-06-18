@@ -4,10 +4,10 @@ const RelationshipsRomaji = {
   icon: '♥',
   firstAnswerAsCorrection: true,
   characters: {
-    'Hanojo': [ 'Girlfriend' ],
+    'Kanojo': [ 'Girlfriend' ],
     'Kareshi': [ 'Boyfriend' ],
-    'Oto': [ 'Husband' ],
-    'Suma': [ 'Wife' ],
+    'Otto': [ 'Husband' ],
+    'Tsuma': [ 'Wife' ],
     'Aishiteru': [ 'I love you' ],
     'Konyaku': [ 'Engagement', 'Engage' ],
     'Kekkon': [ 'Marriage' ],
