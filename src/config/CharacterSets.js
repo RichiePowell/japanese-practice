@@ -26,6 +26,7 @@ import RelationshipsRomaji from '../data/RelationshipsRomaji'
 import RelationshipsHiragana from '../data/RelationshipsHiragana'
 import BodyRomaji from '../data/BodyRomaji'
 import BodyHiragana from '../data/BodyHiragana'
+import FamilyRomaji from '../data/FamilyRomaji'
 
 const characterSets = {
   'Hiragana' : Hiragana,
@@ -50,10 +51,11 @@ const characterSets = {
   'DrinksKana' : DrinksKana,
   'ColoursRomaji' : ColoursRomaji,
   'ColoursKana' : ColoursKana,
-  'BasicAnimalsRomaji' : BasicAnimalsRomaji,
-  'BasicAnimalsKana' : BasicAnimalsKana,
+  'FamilyRomaji' : FamilyRomaji,
   'RelationshipsRomaji' : RelationshipsRomaji,
   'RelationshipsHiragana' : RelationshipsHiragana,
+  'BasicAnimalsRomaji' : BasicAnimalsRomaji,
+  'BasicAnimalsKana' : BasicAnimalsKana,
   'BodyRomaji' : BodyRomaji,
   'BodyHiragana' : BodyHiragana,
 }
