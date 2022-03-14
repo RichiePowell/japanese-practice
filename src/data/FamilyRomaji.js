@@ -1,6 +1,6 @@
 const FamilyRomaji = {
   name: 'Family in Romaji',
-  description: 'Relationship-related words in romaji.',
+  description: 'Words for family members in romaji.',
   icon: '家族',
   firstAnswerAsCorrection: true,
   characters: {
