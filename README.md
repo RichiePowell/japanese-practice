@@ -23,5 +23,5 @@ The console should provide you with a URL to which you can access the game.
 
 
 Originally inspired by
-[Daniel Griffith](https://github.com/Daniel-Griffiths/)'s
+[Daniel Griffiths'](https://github.com/Daniel-Griffiths/)
 [React Hiragana Katakana Game](https://github.com/Daniel-Griffiths/react-hiragana-katakana-game/)
