@@ -1,19 +1,19 @@
 /* Common */
-@import "./common/Variables";
-@import "./common/Animations";
-@import "./common/DarkMode";
-@import "./common/Utilities";
+@use "./common/Variables" as vars;
+@use "./common/Animations";
+@use "./common/DarkMode";
+@use "./common/Utilities";
 
 /* Components */
-@import "./components/Header";
-@import "./components/Buttons";
-@import "./components/Forms";
-@import "./components/Report";
-@import "./components/Timers";
+@use "./components/Header";
+@use "./components/Buttons";
+@use "./components/Forms";
+@use "./components/Report";
+@use "./components/Timers";
 
 /* Pages */
-@import "./pages/Start-Screen";
-@import "./pages/Game";
+@use "./pages/Start-Screen";
+@use "./pages/Game";
 
 html,
 body {
@@ -23,7 +23,7 @@ body {
 
 body {
   margin: 0;
-  font-family: $fontFamily;
+  font-family: vars.$fontFamily;
   background: #e5e5e5 url(../images/bg.svg) no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
@@ -32,7 +32,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overscroll-behavior: none;
 
-  @media (max-width: $breakpoint-mobile) {
+  @media (max-width: vars.$breakpoint-mobile) {
     background: #fff;
   }
 }
@@ -43,7 +43,7 @@ body {
 
 a {
   text-decoration: none;
-  color: $mainColor;
+  color: vars.$mainColor;
 }
 
 .App {
@@ -56,7 +56,7 @@ a {
   min-height: 100%;
   position: relative;
 
-  @media (max-width: $breakpoint-mobile) {
+  @media (max-width: vars.$breakpoint-mobile) {
     max-width: none;
   }
 }
@@ -70,7 +70,7 @@ a {
   position: relative;
   border: 1px transparent solid;
 
-  @media (max-width: $breakpoint-mobile) {
+  @media (max-width: vars.$breakpoint-mobile) {
     background: none;
     border: none;
     border-radius: 0;
@@ -81,6 +81,16 @@ a {
 /* Override SweetAlert class that causes container box to lose central positioning */
 html body.swal2-height-auto {
   height: 100% !important;
+}
+
+/** Override SweetAlert button colouring */
+.swal2-confirm {
+  background-color: vars.$mainColor;
+  transition: 0.2s all ease;
+
+  &:hover {
+    background-color: vars.$mainColorHover;
+  }
 }
 
 /* Combat flash of unstyled text */

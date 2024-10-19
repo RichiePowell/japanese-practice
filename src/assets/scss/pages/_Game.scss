@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "../common/Variables" as vars;
+
 .scores {
   width: 100%;
   user-select: none;
@@ -16,7 +19,7 @@
       right: 30px;
 
       span {
-        color: $mainColor;
+        color: vars.$mainColor;
       }
     }
 
@@ -48,8 +51,8 @@
 .character {
   font-size: 100px;
   line-height: 1;
-  background: $mainColor;
-  color: $white;
+  background: vars.$mainColor;
+  color: vars.$white;
   border-radius: 9999px;
   height: 150px;
   width: 150px;
@@ -76,12 +79,12 @@
   position: relative;
 
   .answer {
-    background: $inputBackground;
+    background: vars.$inputBackground;
     font-size: 24px;
     border: none;
     width: 100%;
     display: block;
-    padding: 10px 20px;
+    padding: 9px 20px;
     font-weight: 300;
     box-sizing: border-box;
     border-radius: 999px;
@@ -89,11 +92,11 @@
   }
 
   .submit {
-    background: darken($inputBackground, 30);
+    background: color.scale(vars.$inputBackground, $lightness: -30%);
     position: absolute;
     right: 7px;
     top: 7px;
-    color: $white;
+    color: vars.$white;
     border: none;
     border-radius: 999px;
     padding: 10px 15px;
@@ -103,7 +106,7 @@
     transition: 0.1s all ease;
 
     &:hover {
-      background: darken($inputBackground, 50);
+      background: color.scale(vars.$inputBackground, $lightness: -50%);
     }
   }
 }
@@ -118,22 +121,22 @@
     padding: 13px 0;
     text-align: center;
     width: 48px;
-    background: $inputBackground;
+    background: vars.$inputBackground;
     display: inline-block;
     margin: 5px;
-    border: 1px $inputBackground solid;
+    border: 1px vars.$inputBackground solid;
     border-radius: 5px;
     font-size: 16px;
     transition: 0.2s all ease;
     cursor: pointer;
 
     &:hover {
-      background: $inputBackgroundHover;
+      background: vars.$inputBackgroundHover;
     }
 
     &:active {
-      background: $mainColor;
-      color: $white;
+      background: vars.$mainColor;
+      color: vars.$white;
       transform: scale(0.9);
     }
   }

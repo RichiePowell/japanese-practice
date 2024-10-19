@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "./Variables" as vars;
+
 body {
   &:before {
     transition: 0.2s all ease;
@@ -8,13 +11,13 @@ body {
   }
 
   &.dark {
-    color: $darkModeTextColor;
+    color: vars.$darkModeTextColor;
 
-    @media (max-width: $breakpoint-mobile) {
+    @media (max-width: vars.$breakpoint-mobile) {
       background: #222;
     }
 
-    @media (min-width: $breakpoint-mobile) {
+    @media (min-width: vars.$breakpoint-mobile) {
       &:before {
         background: rgba(0, 0, 0, 0.7);
         background-attachment: fixed;
@@ -25,27 +28,27 @@ body {
     .container {
       background: #222;
 
-      @media (min-width: $breakpoint-mobile) {
-        border: 1px $darkModeInputBorderColor solid;
+      @media (min-width: vars.$breakpoint-mobile) {
+        border: 1px vars.$darkModeInputBorderColor solid;
       }
     }
 
     .character {
-      background: $darkModeMainColor;
-      color: $darkModeTextColor;
+      background: vars.$darkModeMainColor;
+      color: vars.$darkModeTextColor;
     }
 
     .scores {
       &__total {
         &__correct {
           span {
-            color: $darkModeScoresCorrectTextColor;
+            color: vars.$darkModeScoresCorrectTextColor;
           }
         }
 
         &__wrong {
           span {
-            color: $darkModeScoresWrongTextColor;
+            color: vars.$darkModeScoresWrongTextColor;
           }
         }
       }
@@ -53,55 +56,59 @@ body {
 
     .input {
       .answer {
-        background: $darkModeAnswerBackground;
-        color: $darkModeAnswerTextColor;
+        background: vars.$darkModeAnswerBackground;
+        color: vars.$darkModeAnswerTextColor;
+        border: 1px solid #444;
       }
 
       .submit {
-        background: $darkModeAnswerButtonBackground;
-        color: $darkModeAnswerButtonTextColor;
+        background: vars.$darkModeAnswerButtonBackground;
+        color: vars.$darkModeAnswerButtonTextColor;
 
         &:hover {
-          background: lighten($darkModeAnswerButtonBackground, 12);
+          background: color.scale(
+            vars.$darkModeAnswerButtonBackground,
+            $lightness: 12%
+          );
         }
       }
     }
 
     .answer-options {
       button {
-        background: $darkModeAnswerOptionsBackground;
-        color: $darkModeAnswerOptionsTextColor;
-        border-color: $darkModeAnswerOptionsBorderColor;
+        background: vars.$darkModeAnswerOptionsBackground;
+        color: vars.$darkModeAnswerOptionsTextColor;
+        border-color: vars.$darkModeAnswerOptionsBorderColor;
 
         &:hover {
-          background: $darkModeAnswerOptionsBackgroundHover;
-          color: $darkModeAnswerOptionsTextColorHover;
-          border-color: $darkModeAnswerOptionsBorderColorHover;
+          background: vars.$darkModeAnswerOptionsBackgroundHover;
+          color: vars.$darkModeAnswerOptionsTextColorHover;
+          border-color: vars.$darkModeAnswerOptionsBorderColorHover;
         }
       }
     }
 
     .options {
       &__box {
-        border-color: $darkModeInputBorderColor !important;
+        border-color: vars.$darkModeInputBorderColor !important;
 
         &__character {
           &__label {
             &:hover {
-              border-color: $darkModeInputBorderColorHover;
+              background: vars.$darkModeOptionsHoverBackground;
             }
           }
         }
 
         &__check {
-          background: $darkModeCheckActiveBackground;
-          color: $darkModeCheckActiveTextColor;
+          background: vars.$darkModeCheckActiveBackground;
+          color: vars.$darkModeCheckActiveTextColor;
         }
       }
 
       &--rows {
         .options__box {
-          background: $darkModeBackground;
+          background: vars.$darkModeBackground;
 
           &--checked {
             background: #222;
@@ -111,115 +118,121 @@ body {
 
       &--highlight {
         background: #222;
-        border-color: $darkModeInputBackground;
+        border-color: vars.$darkModeInputBackground;
 
         svg:not(.fa-check).active {
-          color: $darkModeCheckActiveBackground;
+          color: vars.$darkModeCheckActiveBackground;
         }
       }
 
       &__sub {
         background: #222;
-        border-color: $darkModeInputBorderColor;
+        border-color: vars.$darkModeInputBorderColor;
 
         label:hover {
-          border-color: $darkModeInputBorderColorHover;
+          border-color: vars.$darkModeInputBorderColorHover;
 
           .options__sub__checkbox {
-            border-color: $darkModeInputBorderColorHover;
+            border-color: vars.$darkModeInputBorderColorHover;
           }
         }
 
         &__checkbox {
-          border-color: $darkModeInputBorderColor;
+          border-color: vars.$darkModeInputBorderColor;
 
           &__check {
-            color: $darkModeMainColor;
+            color: vars.$darkModeMainColor;
           }
         }
       }
     }
 
     .input-control {
-      background: $darkModeInputBackground;
-      color: $darkModeInputTextColor;
-      border-color: $darkModeInputBorderColor;
+      background: vars.$darkModeInputBackground;
+      color: vars.$darkModeInputTextColor;
+      border-color: vars.$darkModeInputBorderColor;
 
       &:hover {
-        color: $darkModeInputTextColorHover;
-        background: $darkModeInputBackgroundHover;
-        border-color: $darkModeInputBorderColorHover;
+        color: vars.$darkModeInputTextColorHover;
+        background: vars.$darkModeInputBackgroundHover;
+        border-color: vars.$darkModeInputBorderColorHover;
       }
     }
 
     .start-screen {
       .button {
-        color: $darkModeInputAltTextColor;
-        background: $darkModeInputAltBackground;
-        border-color: $darkModeInputAltBorderColor;
+        color: vars.$darkModeInputAltTextColor;
+        background: vars.$darkModeInputAltBackground;
+        border-color: vars.$darkModeInputAltBorderColor;
 
         &:hover {
-          color: $darkModeInputAltTextColorHover;
-          background: $darkModeInputAltBackgroundHover;
-          border-color: $darkModeInputAltBorderColorHover;
+          color: vars.$darkModeInputAltTextColorHover;
+          background: vars.$darkModeInputAltBackgroundHover;
+          border-color: vars.$darkModeInputAltBorderColorHover;
         }
       }
 
       .characters-header {
         background: #222;
-        border-color: $darkModeInputBorderColor;
+        border-color: vars.$darkModeInputBorderColor;
       }
     }
 
     .input-row {
       background: #222;
-      border-color: $darkModeInputBorderColor;
+      border-color: vars.$darkModeInputBorderColor;
     }
 
     .checkbox {
       &:hover .checkbox__box {
-        border-color: $darkModeInputBorderColorHover;
+        border-color: vars.$darkModeInputBorderColorHover;
       }
 
       &__box {
-        border-color: $darkModeInputBorderColor;
+        border-color: vars.$darkModeInputBorderColor;
+        background: none;
 
         &__check {
-          color: $darkModeMainColor;
+          color: #e5e5e5;
         }
       }
     }
 
     /* Modal */
-    .swal2-popup {
-      background: $darkModeBackground;
+    .swal2-modal {
+      background: vars.$darkModeBackground;
 
       .swal2-title {
-        color: $darkModeTextColor;
+        color: vars.$darkModeTextColor;
       }
 
-      .swal2-content {
-        color: $darkModeTextColor;
+      .swal2-html-container {
+        color: vars.$darkModeTextColor;
 
         .report-totals__box {
-          border-color: $darkModeInputBorderColor;
+          border-color: vars.$darkModeInputBorderColor !important;
         }
 
         .report-wrong-answers__item {
-          border-color: $darkModeInputBorderColor;
+          border-color: vars.$darkModeInputBorderColor;
         }
       }
 
       .swal2-styled.swal2-confirm {
-        color: $darkModeInputAltTextColor;
-        background: $darkModeInputAltBackground !important;
+        color: vars.$darkModeInputAltTextColor;
+        background: vars.$darkModeInputAltBackground !important;
         border: none !important;
         outline: none;
+        transition: 0.2s all ease;
+
+        &:hover {
+          background: vars.$darkModeInputAltBackgroundHover !important;
+        }
       }
     }
 
     .game-timer > div > div {
-      color: $darkModeTextColor !important;
+      color: vars.$darkModeTextColor !important;
     }
   }
 }

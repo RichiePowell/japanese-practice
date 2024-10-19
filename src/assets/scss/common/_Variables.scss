@@ -1,6 +1,8 @@
+@use "sass:color";
+
 $fontFamily: "Source Sans Pro", Sans-serif;
 $mainColor: rgba(200, 50, 50, 1);
-$mainColorHover: darken($mainColor, 20);
+$mainColorHover: color.scale($mainColor, $lightness: -20%);
 $white: #fff;
 $green: #32cd32;
 
@@ -8,7 +10,7 @@ $breakpoint-tablet: 768px;
 $breakpoint-mobile: 480px;
 
 $inputBackground: #e5e5e5;
-$inputBackgroundHover: darken(#e5e5e5, 10);
+$inputBackgroundHover: color.scale(#e5e5e5, $lightness: -20%);
 
 /* Dark Mode */
 $darkModeMainColor: #883434;
@@ -28,7 +30,10 @@ $darkModeInputAltBackground: $darkModeMainColor;
 $darkModeInputAltBorderColor: $darkModeMainColor;
 
 $darkModeInputAltTextColorHover: $darkModeTextColor;
-$darkModeInputAltBackgroundHover: darken($darkModeInputAltBackground, 3);
+$darkModeInputAltBackgroundHover: color.scale(
+  $darkModeInputAltBackground,
+  $lightness: -30%
+);
 $darkModeInputAltBorderColorHover: $darkModeInputAltBackgroundHover;
 
 $darkModeAnswerTextColor: $darkModeTextColor;
@@ -41,6 +46,10 @@ $darkModeAnswerButtonBorderColor: #555;
 
 $darkModeAnswerOptionsTextColor: $darkModeTextColor;
 $darkModeAnswerOptionsBackground: #222;
+$darkModeOptionsHoverBackground: color.scale(
+  $darkModeAnswerOptionsBackground,
+  $lightness: -10%
+);
 $darkModeAnswerOptionsBorderColor: #444;
 
 $darkModeAnswerOptionsTextColorHover: $darkModeTextColor;

@@ -1,9 +1,11 @@
+@use "../common/Variables" as vars;
+
 .header {
   margin-bottom: 30px;
   user-select: none;
 
   h1 {
-    font-family: 'Kaushan Script';
+    font-family: "Kaushan Script";
     font-size: 80px;
     position: relative;
     margin: 0;

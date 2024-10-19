@@ -4,7 +4,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
       async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-81787032-5"
+      src="https://www.googletagmanager.com/gtag/js?id=<%- GA_TRACKING_ID %>"
     ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -12,19 +12,18 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
-      gtag("config", "UA-81787032-5");
+      gtag("config", "<%- GA_TRACKING_ID %>");
     </script>
 
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
+    <link rel="icon" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#c83232" />
     <meta
       name="description"
       content="Practice Hiragana and Katakana characters by correctly answering which symbol is on the screen."
     />
-    <meta property="og:url" content="https://japanese-practice.netlify.app/" />
+    <meta property="og:url" content="<%- BASE_URL %>" />
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
@@ -35,12 +34,9 @@
       content="Practice Hiragana and Katakana characters by correctly answering which symbol is on the screen."
     />
     <meta property="fb:app_id" content="307885386909717" />
-    <meta
-      property="og:image"
-      content="https://japanese-practice.netlify.app/og.jpg"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <meta property="og:image" content="<%- BASE_URL %>/og.jpg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
     <title>
       Japanese Practice - Practice Hiragana, Katakana, and common words
     </title>
@@ -48,5 +44,6 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

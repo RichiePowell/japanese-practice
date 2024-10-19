@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "../common/Variables" as vars;
+
 .start-screen {
   > div {
     margin-bottom: 15px;
@@ -10,13 +13,11 @@
   .characters-header {
     margin: 0 -30px;
     padding: 10px 30px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
     user-select: none;
-    font-size: 11px;
-    background: lighten($inputBackground, 7);
-    border-top: 1px $inputBackground solid;
-    border-bottom: 1px $inputBackground solid;
+    font-size: 14px;
+    background: color.scale(vars.$inputBackground, $lightness: 70%);
+    border-bottom: 1px vars.$inputBackground solid;
+    border-top: 1px vars.$inputBackground solid;
 
     &__toggle {
       float: right;
@@ -34,9 +35,9 @@
 
     &--highlight {
       padding: 15px 30px;
-      background: lighten($inputBackground, 7);
-      border-top: 1px $inputBackground solid;
-      border-bottom: 1px $inputBackground solid;
+      background: color.scale(vars.$inputBackground, $lightness: 70%);
+      border-top: 1px vars.$inputBackground solid;
+      border-bottom: 1px vars.$inputBackground solid;
       margin-left: -30px;
       margin-right: -30px;
 
@@ -47,7 +48,7 @@
         transition: 0.2s all ease;
 
         &.active {
-          color: $mainColor;
+          color: vars.$mainColor;
         }
       }
 
@@ -75,7 +76,7 @@
       max-height: 311px;
       overflow: auto;
 
-      @media (max-width: $breakpoint-mobile) {
+      @media (max-width: vars.$breakpoint-mobile) {
         height: calc(100vh - 369px);
         max-height: none;
         overflow: auto;
@@ -84,10 +85,10 @@
       .options__box {
         display: block;
         text-align: left;
-        border-top: 1px $inputBackground solid;
+        border-top: 1px vars.$inputBackground solid;
         transition: 0.2s all ease;
         margin-bottom: 0;
-        background: lighten($inputBackground, 3);
+        background: color.scale(vars.$inputBackground, $lightness: 3%);
 
         &:first-child {
           border-top: none;
@@ -137,7 +138,7 @@
           align-items: center;
 
           &:hover {
-            border-color: $inputBackgroundHover;
+            background: #f5f5f5;
           }
         }
 
@@ -173,8 +174,8 @@
         top: 50%;
         right: 5px;
         transition: 0.2s all ease;
-        background: $mainColor;
-        color: $white;
+        background: vars.$mainColor;
+        color: vars.$white;
         border-radius: 998px;
         width: 15px;
         transform: scale(0.75) translateY(-50%);
@@ -205,7 +206,7 @@
 
   &:hover {
     .checkbox__box {
-      border-color: $inputBackgroundHover;
+      border-color: vars.$inputBackgroundHover;
     }
   }
 
@@ -218,7 +219,7 @@
 
   &__box {
     border-radius: 99px;
-    border: 1px $inputBackground solid;
+    border: 1px vars.$inputBackground solid;
     height: 17px;
     transition: 0.2s all ease;
     width: 17px;
@@ -226,9 +227,10 @@
     display: inline-block;
     margin-right: 5px;
     text-align: center;
+    background: #fff;
 
     &__check {
-      color: $mainColor;
+      color: vars.$mainColor;
       transform: scale(0);
       opacity: 0;
       transition: 0.2s all ease;
@@ -250,9 +252,7 @@
 }
 
 .input-label {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 12px;
+  font-size: 14px;
   margin-bottom: 10px;
 }
 
@@ -262,31 +262,29 @@ button.input-control {
 }
 
 .input-control {
-  border: 1px $inputBackground solid;
+  border: 1px vars.$inputBackground solid;
   background: #fff;
   transition: 0.2s all ease;
   border-radius: 5px;
   line-height: 30px;
   height: 30px;
   padding: 0 10px;
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-size: 14px;
 
   &.alt {
-    background: $mainColor;
-    color: $white;
+    background: vars.$mainColor;
+    color: vars.$white;
     border-color: transparent;
 
     &:hover,
     &:active {
-      background: $mainColorHover;
+      background: vars.$mainColorHover;
     }
   }
 
   &:hover,
   &:active {
-    background: $inputBackground;
+    border-color: vars.$inputBackgroundHover;
   }
 
   &.icon {

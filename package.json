@@ -1,31 +1,35 @@
 {
-  "name": "japanese-kana-game",
-  "version": "0.1.0",
+  "name": "Japanese Practice",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.28",
-    "@fortawesome/free-solid-svg-icons": "^5.13.0",
-    "@fortawesome/react-fontawesome": "^0.1.9",
-    "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.8.1",
-    "lodash": "^4.17.20",
-    "node-sass": "^5.0.0",
-    "react": "^17.0.1",
-    "react-countdown-circle-timer": "^2.2.0",
-    "react-device-detect": "^1.12.1",
-    "react-dom": "^17.0.1",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
-    "sweetalert2-react": "^0.8.3",
-    "typeface-source-sans-pro": "^1.1.5",
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.0.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@testing-library/jest-dom": "^6.0.0",
+    "@testing-library/react": "^16.0.1",
+    "@testing-library/user-event": "^14.5.0",
+    "lodash": "^4.17.21",
+    "react": "^18.3.0",
+    "react-countdown-circle-timer": "^3.0.0",
+    "react-device-detect": "^2.2.2",
+    "react-dom": "^18.3.0",
+    "react-router-dom": "^6.16.0",
+    "sweetalert2": "^11.14.3",
+    "typeface-source-sans-pro": "^1.1.13",
+    "vite-plugin-pwa": "^0.20.5",
     "webfontloader": "^1.6.28"
   },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.3",
+    "sass": "^1.80.3",
+    "vite": "^5.4.9",
+    "vite-plugin-html": "^3.2.2"
+  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
   },
   "eslintConfig": {
     "extends": "react-app"

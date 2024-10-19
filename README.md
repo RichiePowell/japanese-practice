@@ -1,6 +1,6 @@
 # Japanese Practice
 
-A modern, interactive way to practice Japanese hiragana, katakana, and other word sets. This React-based app combines the simplicity of flashcards with an engaging interface and customizable options.
+A modern, interactive way to practice Japanese hiragana, katakana, and other word sets. This Vite-powered, React-based app combines the simplicity of flashcards with an engaging interface and customizable options.
 
 Try the game online: [Japanese Practice](https://japanesepractice.app/)
 
@@ -20,18 +20,22 @@ To run the app locally, follow these steps:
 
 ### Prerequisites
 
-Ensure you have [Node.js](https://nodejs.org/en/) and [Yarn](https://yarnpkg.com/) installed.
+Ensure you have [Node.js](https://nodejs.org/en/) installed.
 
 ### Step 1: Install Dependencies
 
 ```
-yarn install
+
+npm install
+
 ```
 
 ### Step 2: Start the App
 
 ```
-yarn start
+
+npm run dev
+
 ```
 
 Once started, the console will provide a local URL (typically `http://localhost:3000/`) to access the game in your browser.
@@ -40,21 +44,21 @@ Once started, the console will provide a local URL (typically `http://localhost:
 
 In the project directory, the following commands are available:
 
-### `yarn start`
+### `npm run dev`
 
 Runs the app in development mode. The page will reload when you make edits. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `yarn build`
+### `npm run build`
 
-Builds the app for production into the `build` folder. The build is optimized for best performance.
+Builds the app for production into the `dist` folder. The build is optimized for the best performance.
 
-### `yarn test`
+### `npm run serve`
 
-Launches the test runner in interactive watch mode.
+Serves the production build from the `dist` folder to preview locally.
 
-### `yarn eject`
+## Progressive Web App (PWA)
 
-Use this to eject the default configuration if you need full control over the build settings. **Note: this action is irreversible.**
+This app is configured as a PWA using Vite's PWA plugin. The manifest includes offline capabilities and icons for various devices.
 
 ## Originally Inspired By
 

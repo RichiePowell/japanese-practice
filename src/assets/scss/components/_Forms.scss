@@ -1,7 +1,9 @@
+@use "../common/Variables" as vars;
+
 input,
 button,
 select {
-  font-family: $fontFamily;
+  font-family: vars.$fontFamily;
   outline: none;
   -webkit-tap-highlight-color: transparent;
 }

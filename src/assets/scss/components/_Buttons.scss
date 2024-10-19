@@ -1,19 +1,18 @@
+@use "../common/Variables" as vars;
+
 .button {
   padding: 10px 20px;
-  background: $mainColor;
+  background: vars.$mainColor;
   border-radius: 5px;
   border: none;
   user-select: none;
-  color: $white;
+  color: vars.$white;
   cursor: pointer;
   transition: 0.2s all ease;
-  text-transform: uppercase;
-  letter-spacing: 2px;
   display: inline-block;
-  font-size: 13px;
 
   &:hover {
-    background: $mainColorHover;
+    background: vars.$mainColorHover;
   }
 
   &.start {

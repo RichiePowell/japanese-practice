@@ -1,9 +1,11 @@
+@use "../common/Variables" as vars;
+
 .report-totals {
   margin: 20px 0;
 
   &__box {
     display: inline-block;
-    border-right: 1px $inputBackground solid;
+    border-right: 1px vars.$inputBackground solid;
     padding: 15px 24px;
 
     &__label {
@@ -26,7 +28,7 @@
   &__item {
     display: inline-block;
     padding: 8px 18px;
-    border: 1px $inputBackground solid;
+    border: 1px vars.$inputBackground solid;
     border-radius: 5px;
     margin: 5px;
 

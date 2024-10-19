@@ -1,27 +1,22 @@
-import React from 'react'
-import { Consumer } from './context';
+import React from "react";
+import { Consumer } from "../context";
 
 const InputKeyboard = () => {
-
   const answer = React.createRef();
 
   return (
     <Consumer>
-      { ({ actions }) => {
-
+      {({ actions }) => {
         const handleSubmit = (e) => {
           e.preventDefault();
           const currentAnswer = answer.current.value;
           actions.checkAnswer(currentAnswer);
           answer.current.focus();
           e.currentTarget.reset();
-        }
+        };
 
         return (
-          <form
-          className="input"
-          onSubmit={ handleSubmit }
-          >
+          <form className="input" onSubmit={handleSubmit}>
             <input
               id="answer-keyboard"
               name="answer"
@@ -31,16 +26,12 @@ const InputKeyboard = () => {
               placeholder="Enter answer..."
               autoFocus={true}
             />
-            <input
-              type="submit"
-              value="Check"
-              className="submit"
-            />
+            <input type="submit" value="Check" className="submit" />
           </form>
-        )
+        );
       }}
     </Consumer>
-  )
-}
+  );
+};
 
-export default InputKeyboard
+export default InputKeyboard;
