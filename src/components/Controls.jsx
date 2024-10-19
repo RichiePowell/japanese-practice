@@ -1,5 +1,5 @@
 import React from "react";
-import { Consumer } from "../context";
+import { Consumer } from "../context/GameData";
 import Audio from "./controls/Audio";
 import DarkMode from "./controls/DarkMode";
 import InputToggle from "./controls/InputToggle";

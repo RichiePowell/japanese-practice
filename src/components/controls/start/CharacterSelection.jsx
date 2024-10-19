@@ -1,30 +1,26 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const CharacterSelection = ({ kana, kanaSelected, actions }) => {
-  const CountCharacters = () => {
-    let count = 0;
+  const [isToggleAllChecked, setIsToggleAllChecked] = useState(
+    kanaSelected.length === Object.keys(kana).length
+  );
 
-    kanaSelected.forEach((kanaSet) => {
-      count += Object.keys(kana[kanaSet].characters).length;
-    });
-
-    return count;
+  const countCharacters = () => {
+    return kanaSelected.reduce(
+      (count, kanaSet) => count + Object.keys(kana[kanaSet].characters).length,
+      0
+    );
   };
 
   const toggleAll = (checked) => {
-    Object.keys(kana).forEach((kanaSet) => {
-      actions.toggleKana(kanaSet, checked ? 1 : 0);
-    });
+    setIsToggleAllChecked(checked);
+    actions.toggleAllKana(checked);
   };
 
   useEffect(() => {
-    if (kanaSelected.length === 0) {
-      document.getElementById("toggleAll").checked = false;
-    } else if (kanaSelected.length === Object.keys(kana).length) {
-      document.getElementById("toggleAll").checked = true;
-    }
-  });
+    setIsToggleAllChecked(kanaSelected.length === Object.keys(kana).length);
+  }, [kanaSelected, kana]);
 
   return (
     <>
@@ -34,6 +30,7 @@ const CharacterSelection = ({ kana, kanaSelected, actions }) => {
             type="checkbox"
             id="toggleAll"
             className="checkbox__box__input"
+            checked={isToggleAllChecked}
             onChange={(e) => toggleAll(e.target.checked)}
           />
           <label className="checkbox checkbox--right" htmlFor="toggleAll">
@@ -44,7 +41,7 @@ const CharacterSelection = ({ kana, kanaSelected, actions }) => {
           </label>
         </div>
         <div className="characters-header__count">
-          {kanaSelected.length} selected ({CountCharacters()} cards)
+          {kanaSelected.length} selected ({countCharacters()} cards)
         </div>
       </div>
       <div className="options options--rows">

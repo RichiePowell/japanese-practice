@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 /* Components */
-import { GameData } from "../context";
+import { GameData } from "../context/GameData";
 import Header from "./Header";
 import Score from "./Score";
 import Character from "./Character";
@@ -22,8 +22,6 @@ export const Game = () => {
     context.actions.startGame();
     // ... and end it on unmount
     return () => context.actions.endGame();
-
-    // eslint-disable-next-line
   }, []);
 
   const getAnswerCorrection = () => {

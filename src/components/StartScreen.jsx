@@ -1,5 +1,5 @@
 import { useEffect, useContext } from "react";
-import { GameData } from "../context";
+import { GameData } from "../context/GameData";
 import Swal from "sweetalert2";
 import GameOverModalContent from "./modals/GameOver";
 import Header from "./Header";
@@ -10,40 +10,62 @@ import DarkMode from "./controls/DarkMode";
 import StartButton from "./controls/start/StartButton";
 
 const StartScreen = () => {
-  const context = useContext(GameData);
+  const gameData = useContext(GameData);
+
+  if (!gameData) {
+    return <div>Loading...</div>;
+  }
+
+  const {
+    showReport,
+    kana,
+    kanaSelected,
+    answerTimer,
+    gameTimer,
+    showWrongAnswerDialog,
+    sound,
+    actions,
+  } = gameData;
 
   // Show SweetAlert when the game is over
   useEffect(() => {
-    if (context.showReport) {
+    if (showReport) {
       Swal.fire({
         title: "Game Over!",
-        html: GameOverModalContent(context),
+        html: GameOverModalContent(gameData),
         confirmButtonText: "OK",
       }).then(() => {
-        context.actions.toggleReport();
-        context.actions.clearStats();
+        actions.toggleReport();
+        actions.clearStats();
       });
     }
-  }, [context.showReport]); // Re-run when showReport changes
+  }, [showReport, actions]);
 
   return (
     <div className="start-screen">
       <Header />
-      <CharacterSelection
-        kana={context.kana}
-        kanaSelected={context.kanaSelected}
-        actions={context.actions}
-      />
+
+      {kana && kanaSelected ? (
+        <CharacterSelection
+          kana={kana}
+          kanaSelected={kanaSelected}
+          actions={actions}
+        />
+      ) : (
+        <div>Loading kana...</div>
+      )}
+
       <Options
-        answerTimer={context.answerTimer}
-        gameTimer={context.gameTimer}
-        showWrongAnswerDialog={context.showWrongAnswerDialog}
-        actions={context.actions}
+        answerTimer={answerTimer}
+        gameTimer={gameTimer}
+        showWrongAnswerDialog={showWrongAnswerDialog}
+        actions={actions}
       />
+
       <div className="text-center">
-        <Audio sound={context.sound} actions={context.actions} />
-        <StartButton kanaSelected={context.kanaSelected} />
-        <DarkMode actions={context.actions} />
+        <Audio sound={sound} actions={actions} />
+        <StartButton kanaSelected={kanaSelected} />
+        <DarkMode actions={actions} />
       </div>
     </div>
   );

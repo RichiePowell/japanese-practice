@@ -1,5 +1,5 @@
 import React from "react";
-import { Consumer } from "../context";
+import { Consumer } from "../context/GameData";
 
 const InputKeyboard = () => {
   const answer = React.createRef();

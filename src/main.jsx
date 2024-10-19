@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { createRoot } from "react-dom/client";
-import { Provider } from "./context";
+import { Provider } from "./context/GameData"; // Use the Provider you created
 import App from "./App";
 
 const container = document.getElementById("root");

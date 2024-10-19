@@ -1,6 +1,5 @@
 import React from "react";
-import { Consumer } from "./context";
-import { Routes, Route } from "react-router-dom"; // Update to use Routes and Route for React Router 6
+import { Routes, Route } from "react-router-dom";
 import WebFont from "webfontloader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -39,21 +38,19 @@ WebFont.load({
   },
 });
 
-const App = () => (
-  <Consumer>
-    {({ gameStart }) => (
-      <div className="App">
-        <div className="container">
-          <Routes>
-            <Route path="/" element={<StartScreen />} />
-            <Route path="/play" element={<Game />} />
-          </Routes>
-        </div>
-
-        <FontAwesomeIcon icon="spinner" spin className="loading" />
+const App = () => {
+  return (
+    <div className="App">
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<StartScreen />} />
+          <Route path="/play" element={<Game />} />
+        </Routes>
       </div>
-    )}
-  </Consumer>
-);
+
+      <FontAwesomeIcon icon="spinner" spin className="loading" />
+    </div>
+  );
+};
 
 export default App;
