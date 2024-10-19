@@ -40,6 +40,7 @@ Once started, the console will provide a local URL (typically `http://localhost:
 
 In the project directory, the following commands are available:
 
+<<<<<<< HEAD
 ### `yarn start`
 
 Runs the app in development mode. The page will reload when you make edits. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -59,3 +60,8 @@ Use this to eject the default configuration if you need full control over the bu
 ## Originally Inspired By
 
 This project was originally inspired by [Daniel Griffiths'](https://github.com/Daniel-Griffiths/) [React Hiragana Katakana Game](https://github.com/Daniel-Griffiths/react-hiragana-katakana-game/).
+=======
+Originally inspired by
+[Daniel Griffiths'](https://github.com/Daniel-Griffiths/)
+[React Hiragana Katakana Game](https://github.com/Daniel-Griffiths/react-hiragana-katakana-game/)
+>>>>>>> 84d107d8ca1d36d39b1710326e90c2f82df61d59
