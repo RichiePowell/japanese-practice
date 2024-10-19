@@ -19,7 +19,6 @@ const CharacterSelection = ({ kana, kanaSelected, actions }) => {
   };
 
   useEffect(() => {
-    console.log(kanaSelected.length, Object.keys(kana).length);
     if (kanaSelected.length === 0) {
       document.getElementById("toggleAll").checked = false;
     } else if (kanaSelected.length === Object.keys(kana).length) {
