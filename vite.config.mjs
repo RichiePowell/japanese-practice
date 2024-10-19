@@ -7,6 +7,13 @@ export default defineConfig(({ mode }) => {
   const baseUrl = process.env.VITE_BASE_URL || "http://localhost:3000";
 
   return {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: "modern-compiler", // or "modern"
+        },
+      },
+    },
     plugins: [
       react(),
       createHtmlPlugin({
