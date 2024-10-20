@@ -1,19 +1,33 @@
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Kana } from "../../../types/KanaTypes";
 
-const CharacterSelection = ({ kana, kanaSelected, actions }) => {
-  const [isToggleAllChecked, setIsToggleAllChecked] = useState(
+interface CharacterSelectionProps {
+  kana: Kana;
+  kanaSelected: string[];
+  actions: {
+    toggleKana: (kanaSet: string) => void;
+    toggleAllKana: (checked: boolean) => void;
+  };
+}
+
+const CharacterSelection: React.FC<CharacterSelectionProps> = ({
+  kana,
+  kanaSelected,
+  actions,
+}) => {
+  const [isToggleAllChecked, setIsToggleAllChecked] = useState<boolean>(
     kanaSelected.length === Object.keys(kana).length
   );
 
-  const countCharacters = () => {
+  const countCharacters = (): number => {
     return kanaSelected.reduce(
       (count, kanaSet) => count + Object.keys(kana[kanaSet].characters).length,
       0
     );
   };
 
-  const toggleAll = (checked) => {
+  const toggleAll = (checked: boolean): void => {
     setIsToggleAllChecked(checked);
     actions.toggleAllKana(checked);
   };
