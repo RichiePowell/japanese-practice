@@ -409,12 +409,13 @@ export const Provider: FC<ProviderProps> = ({ children }) => {
     const selectedSet = shuffledKanaSets[0];
 
     const selectedKanaData = kana[selectedSet];
-    const kanaCharacters = selectedKanaData.characters;
+    const kanaCharacters: Record<string, string[]> =
+      selectedKanaData.characters;
     let shuffledCharacters = shuffle(Object.keys(kanaCharacters));
 
     if (currentCharacter) {
       shuffledCharacters = shuffledCharacters.filter(
-        (char) => char !== currentCharacter
+        (char: string) => char !== currentCharacter
       );
     }
 
