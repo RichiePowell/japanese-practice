@@ -94,7 +94,7 @@ const CharacterSelection: React.FC<CharacterSelectionProps> = ({
                       : "")
                   }
                 >
-                  {kanaData.icon || "No icon"}
+                  {kanaData.icon}
                 </div>
                 <div className="options__box__character__details">
                   <h2>
