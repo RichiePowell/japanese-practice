@@ -1,18 +1,20 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { createRoot } from "react-dom/client";
-import { Provider } from "./context/GameData"; // Use the Provider you created
+import { Provider as GameDataProvider } from "./context/GameData"; // Use the Provider you created
 import App from "./App";
 
 const container = document.getElementById("root");
-const root = createRoot(container);
+if (container) {
+  const root = createRoot(container);
 
-root.render(
-  <React.StrictMode>
+  root.render(
     <Router>
-      <Provider>
+      <GameDataProvider>
         <App />
-      </Provider>
+      </GameDataProvider>
     </Router>
-  </React.StrictMode>
-);
+  );
+} else {
+  console.error("Failed to find the root element.");
+}

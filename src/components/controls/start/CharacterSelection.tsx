@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Kana } from "../../../types/KanaTypes";
+import { CharacterSets } from "../../../types/CharacterSetTypes";
 
 interface CharacterSelectionProps {
-  kana: Kana;
+  kana: CharacterSets;
   kanaSelected: string[];
   actions: {
     toggleKana: (kanaSet: string) => void;
@@ -21,10 +21,14 @@ const CharacterSelection: React.FC<CharacterSelectionProps> = ({
   );
 
   const countCharacters = (): number => {
-    return kanaSelected.reduce(
-      (count, kanaSet) => count + Object.keys(kana[kanaSet].characters).length,
-      0
-    );
+    return kanaSelected.reduce((count, kanaSet) => {
+      const kanaData = kana[kanaSet]; // Safely retrieve the kana data
+      // Ensure kanaData and its characters are defined before accessing
+      if (kanaData && kanaData.characters) {
+        return count + Object.keys(kanaData.characters).length;
+      }
+      return count;
+    }, 0);
   };
 
   const toggleAll = (checked: boolean): void => {
@@ -59,48 +63,53 @@ const CharacterSelection: React.FC<CharacterSelectionProps> = ({
         </div>
       </div>
       <div className="options options--rows">
-        {Object.keys(kana).map((kanaSet) => (
-          <div
-            className={
-              "options__box options__box__character" +
-              (kanaSelected.includes(kanaSet) ? " options__box--checked" : "")
-            }
-            key={kanaSet}
-          >
-            <input
-              type="checkbox"
-              id={kana[kanaSet].name}
-              value={kanaSet}
-              checked={kanaSelected.includes(kanaSet)}
-              onChange={(e) => actions.toggleKana(e.target.value)}
-            />
-            <label
-              htmlFor={kana[kanaSet].name}
-              className="options__box__character__label kana"
+        {Object.keys(kana).map((kanaSet) => {
+          const kanaData = kana[kanaSet];
+          if (!kanaData || !kanaData.characters) return null;
+
+          return (
+            <div
+              className={
+                "options__box options__box__character" +
+                (kanaSelected.includes(kanaSet) ? " options__box--checked" : "")
+              }
+              key={kanaSet}
             >
-              <div
-                className={
-                  "options__box__character__icon" +
-                  (kana[kanaSet].icon.length > 1
-                    ? " options__box__character__icon--combo"
-                    : "")
-                }
+              <input
+                type="checkbox"
+                id={kanaData.name}
+                value={kanaSet}
+                checked={kanaSelected.includes(kanaSet)}
+                onChange={(e) => actions.toggleKana(e.target.value)}
+              />
+              <label
+                htmlFor={kanaData.name}
+                className="options__box__character__label kana"
               >
-                {kana[kanaSet].icon}
-              </div>
-              <div className="options__box__character__details">
-                <h2>
-                  {kana[kanaSet].name} (
-                  {Object.keys(kana[kanaSet].characters).length})
-                </h2>
-                {kana[kanaSet].description && (
-                  <p>{kana[kanaSet].description}</p>
-                )}
-                <FontAwesomeIcon icon="check" className="options__box__check" />
-              </div>
-            </label>
-          </div>
-        ))}
+                <div
+                  className={
+                    "options__box__character__icon" +
+                    (kanaData.icon?.length && kanaData.icon.length > 1
+                      ? " options__box__character__icon--combo"
+                      : "")
+                  }
+                >
+                  {kanaData.icon || "No icon"}
+                </div>
+                <div className="options__box__character__details">
+                  <h2>
+                    {kanaData.name} ({Object.keys(kanaData.characters).length})
+                  </h2>
+                  {kanaData.description && <p>{kanaData.description}</p>}
+                  <FontAwesomeIcon
+                    icon="check"
+                    className="options__box__check"
+                  />
+                </div>
+              </label>
+            </div>
+          );
+        })}
       </div>
     </>
   );
